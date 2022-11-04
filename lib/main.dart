@@ -1,6 +1,11 @@
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/services.dart';
+// ignore: unnecessary_import
+
+import 'package:google_fonts/google_fonts.dart';
 
 import 'Pages/Home_Page.dart';
 import 'Pages/Login.dart';
@@ -17,7 +22,10 @@ class MyApp extends StatelessWidget {
     // String Name = "Vipul";
     return MaterialApp(
         themeMode: ThemeMode.light,
-        theme: ThemeData(primarySwatch: Colors.deepOrange),
+        theme: ThemeData(
+            primarySwatch: Colors.deepOrange,
+            fontFamily: GoogleFonts.lato().fontFamily,
+            primaryTextTheme: GoogleFonts.latoTextTheme()),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
         ),
@@ -26,8 +34,7 @@ class MyApp extends StatelessWidget {
           "/": (context) => HomePage(),
           "/home": (context) => HomePage(),
           "/login": (context) => LoginPage()
-      }
-    );
+        });
   }
 }
 
