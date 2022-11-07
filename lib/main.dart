@@ -9,35 +9,33 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'Pages/Home_Page.dart';
 import 'Pages/Login.dart';
+import 'Utils/route.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    // String Name = "Vipul";
     return MaterialApp(
-        themeMode: ThemeMode.light,
-        theme: ThemeData(
-            primarySwatch: Colors.deepOrange,
-            fontFamily: GoogleFonts.lato().fontFamily,
-            primaryTextTheme: GoogleFonts.latoTextTheme()),
-        darkTheme: ThemeData(
-          brightness: Brightness.dark,
-        ),
-        initialRoute: "/login",
-        routes: {
-          "/": (context) => HomePage(),
-          "/home": (context) => HomePage(),
-          "/login": (context) => LoginPage()
-        });
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => LoginPage(),
+        MyRoute.homeRoute: (context) => HomePage(),
+        MyRoute.loginRoute: (context) => LoginPage()
+      },
+    );
   }
 }
-
 
 
 
