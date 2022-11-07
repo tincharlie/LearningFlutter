@@ -1,23 +1,20 @@
-
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatelessWidget {
-  final Days = 30;
+  final int days = 30;
   final String name = "Vipul";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ML App"),
+        title: Text("Catalog App"),
       ),
       body: Center(
         child: Container(
-          child: Text("Wlcm to $Days days of ML Series by $name"),
+          child: Text("Welcome to $days days of flutter by $name"),
         ),
       ),
-    drawer: Drawer(),
+      drawer: Drawer(),
     );
   }
 }
