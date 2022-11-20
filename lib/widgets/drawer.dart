@@ -24,8 +24,9 @@ class MyDrawer extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.deepPurple),
                 accountName: Text("Vipul Dsa"),
                 accountEmail: Text("vipul@gmail.com"),
-                currentAccountPicture:
-                    CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
+                currentAccountPicture: CircleAvatar(
+                    radius: 10.0, 
+                    backgroundImage: NetworkImage(imageUrl)),
               ),
             ),
             // ignore: prefer_const_constructors
