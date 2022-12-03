@@ -3,9 +3,11 @@
 
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/mlapp.dart';
+import 'package:flutter_application_1/utils/route.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../widgets/item_widget.dart';
@@ -54,18 +56,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
+        backgroundColor: MyTheme.creamColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoute.cartRoute),
+          backgroundColor: MyTheme.darkBlueColor,
+          child: Icon(CupertinoIcons.cart),
+        ),
         body: SafeArea(
-      child: Container(
-        padding: Vx.m32,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          CatalogHeader(),
-          if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-            CatalogList().py20().expand()
-          else
-            CircularProgressIndicator().centered().py16()
-        ]),
-      ),
-    ));
+          child: Container(
+            padding: Vx.m32,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
+                CatalogList().py20().expand()
+              else
+                CircularProgressIndicator().centered().py16()
+            ]),
+          ),
+        ));
   }
 }
 

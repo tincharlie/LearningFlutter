@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/pages/cart_page.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 // ignore: unnecessary_import
 
@@ -20,6 +21,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // var cartRoute;
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
@@ -29,7 +31,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         MyRoute.homeRoute: (context) => HomePage(),
-        MyRoute.loginRoute: (context) => LoginPage()
+        MyRoute.loginRoute: (context) => LoginPage(),
+        MyRoute.cartRoute: (context) => CartPage()
+
       },
     );
   }
