@@ -2,7 +2,6 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors, unused_import, import_of_legacy_library_into_null_safe
 
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -56,11 +55,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
-        backgroundColor: MyTheme.creamColor,
+        // backgroundColor: Theme.of(context).canvasColor,
+        backgroundColor: context.cardColor,
         floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoute.cartRoute),
-          backgroundColor: MyTheme.darkBlueColor,
-          child: Icon(CupertinoIcons.cart),
+          onPressed: () => Navigator.pushNamed(context, RouterAuto.cartRoute),
+          // backgroundColor: MyTheme.darkBlueColor,
+          // ignore: deprecated_member_use
+          backgroundColor: context.theme.buttonColor,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
         ),
         body: SafeArea(
           child: Container(

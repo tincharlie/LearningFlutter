@@ -12,7 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'Pages/Home_Page.dart';
 import 'Pages/Login.dart';
-import 'Utils/route.dart';
+import 'utils/route.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,19 +21,21 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // var cartRoute;
+    // ignore: prefer_typing_uninitialized_variables
+
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        MyRoute.homeRoute: (context) => HomePage(),
-        MyRoute.loginRoute: (context) => LoginPage(),
-        MyRoute.cartRoute: (context) => CartPage()
-
+        RouterAuto.homeRoute: (context) => HomePage(),
+        // ignore: prefer_const_constructors
+        RouterAuto.cartRoute: (context) => CartPage(),
+        RouterAuto.loginRoute: (context) => LoginPage(),
+        // ignore: prefer_const_constructors
       },
     );
   }
