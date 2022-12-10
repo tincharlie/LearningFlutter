@@ -37,8 +37,18 @@ class MyTheme {
           elevation: 0.0,
           // ignore: prefer_const_constructors
           iconTheme: IconThemeData(color: Colors.white),
-          toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
-          titleTextStyle: Theme.of(context).textTheme.headline6));
+          toolbarTextStyle: Theme.of(context)
+              .textTheme
+              .copyWith(
+                  headline6: context.textTheme.headline6!
+                      .copyWith(color: Colors.white))
+              .bodyText2,
+          titleTextStyle: Theme.of(context)
+              .textTheme
+              .copyWith(
+                  headline6: context.textTheme.headline6!
+                      .copyWith(color: Colors.white))
+              .headline6));
 
   // Colors
   static Color creamColor = Color(0xfff5f5f5);
